@@ -35,10 +35,26 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-
 ## Tutorial
+
 git init
 git add .
 git commit ....
 git remote add origin <url>
 git push origin main
+
+## To fix deploymeny error on github
+
+Remove
+
+```
+# - name: Static HTML export with Next.js
+#   run: ${{ steps.detect-package-manager.outputs.runner }} next export
+      
+```
+
+Change `next.config.mjs` to `next.config.js`
+
+Change `export default nextConfig;` to `module.exports = nextConfig;`
+
+
